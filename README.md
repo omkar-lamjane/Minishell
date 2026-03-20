@@ -1,55 +1,49 @@
-MiniShell – Custom Unix Shell in C
-Author: Omkar Lamjane
-Domain: Embedded Systems / System Programming
-Project Overview
+# MiniShell – Custom Unix Shell in C
 
+### Author: Omkar Lamjane  
+### Domain: Embedded Systems / System Programming  
+
+---
+
+## Project Overview
 MiniShell is a simplified implementation of a Unix/Linux shell developed using the C programming language. The project demonstrates how operating systems execute commands, manage processes, and interact with users through a command-line interface.
 
-The shell reads user input, parses commands, and executes them using system calls such as fork(), execvp(), and wait().
+The shell reads user input, parses commands, and executes them using system calls such as `fork()`, `execvp()`, and `wait()`.
 
-Objectives
+---
 
-Understand process creation and management
+## Objectives
+- Understand process creation and management  
+- Learn command parsing and execution  
+- Implement built-in shell commands  
+- Gain practical experience with system calls  
 
-Learn command parsing and execution
+---
 
-Implement built-in shell commands
+## Features
+- Command execution (e.g., `ls`, `pwd`, `cat`)  
+- Built-in commands:
+  - `cd`
+  - `exit`  
+- Command history using a linked list  
+- Dynamic memory management  
+- Process handling using `fork()` and `execvp()`  
+- Error handling for invalid commands  
 
-Gain practical experience with system calls
+---
 
-Features
+## Concepts Used
+- Process Management (`fork`, `exec`, `wait`)  
+- Pointers and Dynamic Memory Allocation  
+- Linked Lists  
+- String Parsing  
+- System Calls  
+- File Handling (if implemented)  
 
-Command execution (e.g., ls, pwd, cat)
+---
 
-Built-in commands:
+## Project Structure
 
-cd
-
-exit
-
-Command history using a linked list
-
-Dynamic memory management
-
-Process handling using fork() and execvp()
-
-Error handling for invalid commands
-
-Concepts Used
-
-Process Management (fork, exec, wait)
-
-Pointers and Dynamic Memory Allocation
-
-Linked Lists
-
-String Parsing
-
-System Calls
-
-File Handling (if implemented)
-
-Project Structure
 MiniShell/
 │── main.c
 │── shell.c
@@ -57,27 +51,25 @@ MiniShell/
 │── header.h
 │── Makefile
 │── README.md
-How It Works
 
-The shell displays a prompt
 
-The user enters a command
+---
 
-The command is parsed into tokens
+## How It Works
+1. The shell displays a prompt  
+2. The user enters a command  
+3. The command is parsed into tokens  
+4. The shell checks:
+   - If it is a built-in command, it executes internally  
+   - Otherwise, it creates a child process  
+5. The command is executed using `execvp()`  
+6. The parent process waits for completion  
+7. The loop continues  
 
-The shell checks:
+---
 
-If it is a built-in command, it executes internally
-
-Otherwise, it creates a child process
-
-The command is executed using execvp()
-
-The parent process waits for completion
-
-The loop continues
-
-Compilation and Execution
+## Compilation and Execution
+```bash
 gcc *.c -o minishell
 ./minishell
 Sample Output
